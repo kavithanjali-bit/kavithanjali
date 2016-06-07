@@ -1,26 +1,20 @@
-#include<conio.h>
-long countprime(long a,long k)
+#include <stdio.h>
+ void lower_string(char []);
+ int main()
 {
-long i;
-for(i=a;i>=2;i--)
-{
-if(k%i==0)
-return 0;
+   char string[100];
+  printf("Enter a string to convert it into lower case\n");
+   gets(string);
+ lower_string(string);
+ printf("Entered string in lower case is \"%s\"\n", string);
+ return 0;
 }
-return 1;
-}
-void main()
-{
-long i,range;
-long count=1;
-double x;
-printf("Enter the range: ");
-scanf("%ld\n",&range);
-for(i=3;i<range;i++)
-{
-x=sqrt(i);
-count+=countprime(floor(x),i);
-}
-printf("\n Total number of prime numbers are %ld",count);
-getch();
+ void lower_string(char s[]) {
+   int c = 0;
+  while (s[c] != '\0') {
+      if (s[c] >= 'A' && s[c] <= 'Z') {
+         s[c] = s[c] + 32;
+      }
+      c++;
+   }
 }
